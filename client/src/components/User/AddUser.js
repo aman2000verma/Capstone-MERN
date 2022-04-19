@@ -8,13 +8,12 @@ const AddUser = () => {
   const navigate = useNavigate();
   const submitHandler = (e) => {
     e.preventDefault();
-
     UserService.postUser({
       fullname: fullname,
       email: usermail,
       gender: usergender,
       phone: userphone,
-      password: userpassword,
+      password: userpassword
     }).then((res) => {
       console.log(res);
       if (res.status === 200) {
@@ -24,7 +23,7 @@ const AddUser = () => {
   };
   return (
     <div className="container m-2">
-      <h3>Create New User</h3>
+      <h3>Edit User</h3>
       <form onSubmit={submitHandler}>
         <div className="form-group">
           <label htmlFor="fullname">FullName</label>
